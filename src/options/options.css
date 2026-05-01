@@ -1,0 +1,209 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1e293b;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+
+header { margin-bottom: 24px; }
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tagline {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ── Save banner ─────────────────────────────────────── */
+
+.save-banner {
+  font-size: 12px;
+  font-weight: 600;
+  color: #10b981;
+  height: 20px;
+  margin-bottom: 12px;
+  transition: opacity 0.3s;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* ── Row label (label + control on one line) ─────────── */
+
+.row-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.row-label + .row-label { border-top: 1px solid #f1f5f9; }
+
+.label-text { color: #334155; }
+
+/* ── Field (label above control) ────────────────────── */
+
+.field {
+  padding: 10px 0 4px;
+}
+
+.field .label-text {
+  display: block;
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* ── Toggle switch ───────────────────────────────────── */
+
+.toggle {
+  appearance: none;
+  width: 40px;
+  height: 22px;
+  background: #cbd5e1;
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggle:checked { background: #10b981; }
+.toggle:checked::after { transform: translateX(18px); }
+
+/* ── Select ──────────────────────────────────────────── */
+
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+select:focus { outline: 2px solid #10b981; outline-offset: 2px; }
+
+/* ── Color row ───────────────────────────────────────── */
+
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+
+.color-swatch:hover { transform: scale(1.1); }
+.color-swatch.active { border-color: #0f172a; }
+
+input[type="color"] {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+
+/* ── Range ───────────────────────────────────────────── */
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #10b981;
+}
+
+/* ── Number input ─────────────────────────────────────── */
+
+input[type="number"] {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #334155;
+  width: 100px;
+}
+
+input[type="number"]:focus { outline: 2px solid #10b981; outline-offset: 2px; }
+
+/* ── Warning ─────────────────────────────────────────── */
+
+.warning {
+  font-size: 12px;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.warning code {
+  font-family: monospace;
+  background: #fde68a;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* ── Disabled state ──────────────────────────────────── */
+
+.card.disabled { opacity: 0.45; pointer-events: none; }
