@@ -15,10 +15,11 @@ echo ""
 echo "First run: sign in to Google to access Tasks."
 echo "Subsequent runs: the profile is reused (no sign-in needed)."
 
-"$CHROME" \
+# open -na forces a completely separate Chrome process, preventing
+# interference with an already-running Chrome instance.
+open -na "Google Chrome" --args \
   --user-data-dir="$DEV_PROFILE" \
   --load-extension="$EXTENSION_DIR" \
   --no-first-run \
   --no-default-browser-check \
-  "https://tasks.google.com" \
-  2>/dev/null &
+  "https://tasks.google.com"
